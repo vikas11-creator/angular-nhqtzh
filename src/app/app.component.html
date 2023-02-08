@@ -1,0 +1,47 @@
+<div class="flex-container">
+  <div>
+    <h3>Form 1</h3>
+
+    <form [formGroup]="form1" (submit)="onSubmit(1)">
+      <div formArrayName="array">
+        <div class="row" [class.selected]="selected1.includes(item)"
+            *ngFor="let item of model1; let i = index" 
+            [formGroupName]="i">
+          <input formControlName="value" />
+          <button (click)="onSelect(1, item)">Select</button>
+        </div>
+      </div>
+      <button>Submit</button>
+    </form>
+
+    <h3>Model</h3>
+    <pre>{{model1 | json}}</pre>
+  </div>
+
+  <div>
+    <p>
+      <button (click)="moveFrom(1)">Move right</button>  
+    </p>
+    <p>
+      <button (click)="moveFrom(2)">Move left</button>
+    </p>
+  </div>
+
+  <div>
+    <h3>Form 2</h3>
+
+    <form [formGroup]="form2" (submit)="onSubmit(2)">
+      <div formArrayName="array">
+        <div class="row" [class.selected]="selected2.includes(item)"
+            *ngFor="let item of model2; let i = index" 
+            [formGroupName]="i">
+          <input formControlName="value" />
+          <button (click)="onSelect(2, item)">Select</button>
+        </div>
+      </div>
+      <button>Submit</button>
+    </form>
+    <h3>Model</h3>
+    <pre>{{model2 | json}}</pre>
+  </div>
+</div>

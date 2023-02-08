@@ -1,0 +1,23 @@
+p {
+  font-family: Lato;
+}
+
+.row {
+  padding: 5px;
+}
+
+.row.selected {
+  background-color: red;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  padding: 10px;
+}
+
+input {
+  width: 50px;
+}
